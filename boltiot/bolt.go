@@ -179,3 +179,15 @@ func (bolt Bolt) isAlive string(){
 	url := BASE_URL+bolt.apiKey+"/isAlive?&deviceName="+bolt.deviceId
 }
 
+func (bolt Bolt) isOnline string(){
+	/*
+		Check the connectivity of the device
+
+		:param None
+		:returns: request status, device connectivity, timestamp
+		:example: {"success","1","value":"online","Sun 2018-05-06 08:14:43 UTC"}
+		:rtype: JSON
+	*/
+
+	url := BASE_URL+bolt.apiKey+"/isOnline?&deviceName="+bolt.deviceId
+}
