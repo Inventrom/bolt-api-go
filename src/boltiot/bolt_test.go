@@ -19,9 +19,7 @@ var bolt = Bolt{"7bc48b25-f5c8-4ef3-9477-c599835583da","BOLT3729610"}
 
 func TestDigitalWrite(t *testing.T){
 	
-	returnedResponse := bolt.DigitalWrite("4","HIGH")
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.DigitalWrite("4","HIGH"))
 
 	if(responseStruct.SuccessStatus != "1"){
 		t.Error("Digital Write Failed")
@@ -35,9 +33,7 @@ func TestDigitalWrite(t *testing.T){
 
 func TestDigitalRead(t *testing.T){
 
-	returnedResponse := bolt.DigitalRead("1")
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.DigitalRead("1"))
 
 	if (responseStruct.SuccessStatus != "1") {
 		t.Error("Digital Read Failed")
@@ -50,9 +46,7 @@ func TestDigitalRead(t *testing.T){
 
 func TestAnalogWrite(t *testing.T){
 	
-	returnedResponse := bolt.AnalogWrite("0","100")
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.AnalogWrite("0","100"))
 
 	if(responseStruct.SuccessStatus != "1"){
 		t.Error("Analog Write Failed")
@@ -65,9 +59,7 @@ func TestAnalogWrite(t *testing.T){
 
 func TestAnalogRead(t *testing.T){
 	
-	returnedResponse := bolt.AnalogRead("A0")
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.AnalogRead("A0"))
 
 	analogValue, _ := strconv.Atoi(responseStruct.ReturnValue)
 	if(responseStruct.SuccessStatus != "1"){
@@ -82,9 +74,7 @@ func TestAnalogRead(t *testing.T){
 
 func TestSerialBegin(t *testing.T){
 	
-	returnedResponse := bolt.SerialBegin("9600")
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.SerialBegin("9600"))
 
 	if(responseStruct.ReturnValue == "Success" || responseStruct.ReturnValue == "Command timed out"){ 
 		fmt.Println("Serial Begin Successful!")
@@ -96,9 +86,7 @@ func TestSerialBegin(t *testing.T){
 
 func TestSerialWrite(t *testing.T){
 	
-	returnedResponse := bolt.SerialWrite("hello")
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.SerialWrite("hello"))
 
 	if(responseStruct.SuccessStatus != "1"){
 		t.Error("Serial Write Failed")
@@ -112,9 +100,7 @@ func TestSerialWrite(t *testing.T){
 
 func TestSerialRead(t *testing.T) {
 
-	returnedResponse := bolt.SerialRead("5")
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.SerialRead("5"))
 	
 	if(responseStruct.SuccessStatus != "1"){
 		t.Error("Serial Read Failed")
@@ -127,9 +113,7 @@ func TestSerialRead(t *testing.T) {
 
 func TestIsAlive(t *testing.T){
 	
-	returnedResponse := bolt.IsAlive()
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.IsAlive())
 
 	if(responseStruct.SuccessStatus != "1"){
 		t.Error("Is Alive Failed")
@@ -142,9 +126,7 @@ func TestIsAlive(t *testing.T){
 
 func TestIsOnline(t *testing.T){
 
-	returnedResponse := bolt.IsOnline()
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.IsOnline())
 
 	if (responseStruct.SuccessStatus != "1") {
 		t.Error("Is Online Failed")
@@ -157,9 +139,7 @@ func TestIsOnline(t *testing.T){
 
 func TestRestart(t *testing.T){
 	
-	returnedResponse := bolt.Restart()
-	byte_data := []byte(returnedResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	parseJsonResponse(bolt.Restart())
 
 	if (responseStruct.ReturnValue == "Restarted" || responseStruct.ReturnValue == "Command timed out"){
 		fmt.Println("Restart Successful!")
@@ -167,4 +147,9 @@ func TestRestart(t *testing.T){
 	} else{
 		t.Error("Restart Failed")
 	}
+}
+
+func parseJsonResponse(passedInResponse string){
+	byte_data := []byte(passedInResponse)
+	json.Unmarshal(byte_data, &responseStruct)
 }
