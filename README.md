@@ -19,7 +19,7 @@ Follow these instructions to install the Bolt API library directly to your GOPAT
 ## GPIO Functions
 
 1. digitalWrite Command
-```
+```go
 package main
 
 import (
@@ -35,7 +35,7 @@ func main(){
 }
 ```
 2. digitalRead Command
-```
+```go
 package main
 
 import (
@@ -52,7 +52,7 @@ func main(){
 ```
 
 3. analogWrite Command
-```
+```go
 package main
 
 import (
@@ -69,7 +69,7 @@ func main(){
 ```
 
 4. analogRead Command
-```
+```go
 package main
 
 import (
@@ -88,7 +88,7 @@ func main(){
 ## UART Functions
 
 1. serialBegin Command
-```
+```go
 package main
 
 import (
@@ -106,7 +106,7 @@ func main(){
 
 2. serialWrite Command
 
-```
+```go
 package main
 
 import (
@@ -124,7 +124,7 @@ func main(){
 
 3. serialRead Command
 
-```
+```go
 package main
 
 import (
@@ -144,7 +144,7 @@ func main(){
 
 1. isOnline Command - Checks the connectivity status of the Bolt Module to the cloud.
 
-```
+```go
 package main
 
 import (
@@ -161,7 +161,7 @@ func main(){
 ```
 
 2. restart Command - Restart your device
-```
+```go
 package main
 
 import (
@@ -177,7 +177,7 @@ func main(){
 }
 ```
 3. version Command - Check the device version
-```
+```go
 package main
 
 import (
@@ -195,7 +195,7 @@ func main(){
 
 4. isAlive Command (Deprecated) - Check the connectivity status of your Bolt device
 
-```
+```go
 package main
 
 import (
