@@ -8,9 +8,9 @@ Follow these instructions to install the Bolt API library directly to your GOPAT
 
 1. Clone or Download the repository from Github
 
-2. Navigate to the /src folder and copy the /boltiot folder from the /src folder and paste it into your GOPATH
+2. Navigate to the **/src** folder and copy the **/boltiot** folder from the **/src** folder and paste it into your **GOPATH**
 
-3. Open up the terminal in the following location <YOUR GOPATH>/boltiot and run the following command `go install`
+3. Open up the terminal in the following location **<YOUR GOPATH>/boltiot** and run the following command `go install`
 
 4. Now you are all setup to start working with the APIs
 
@@ -215,11 +215,23 @@ func main(){
 
 You can find the Bolt API documentation here http://cloud.boltiot.com/api_credentials.
 
-## Contributing
+# Testing
+
+To perform a unit test follow these instructions.
+
+1. Setup your Bolt according to the instructions provided in the **test_configurations.txt** file provided under the **/src** directory.
+
+2. Make sure that your Bolt device is connected to the Bolt Cloud.
+
+3. Navigate to your package folder, **<YOUR-GOPATH>/boltiot**, there is a test file in there named **bolt_test.go**
+
+4. Open up your terminal in this location and run the following command `go test`
+
+# Contributing
 
 Your contributions are always welcome! Please refer to the contribution guidelines. 
 
-### Guidelines
+## Guidelines
 * Fork the repository on GitHub.
 * First checkout to dev branch.
 * Create a feature branch only when you are working on a new feature. 
