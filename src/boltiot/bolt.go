@@ -39,7 +39,7 @@ func (bolt Bolt) DigitalRead(pin string) string{
         :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.ApiKey+"/digitalRead?=pin"+pin+"&deviceName="+bolt.DeviceId
+	url := BASE_URL+bolt.ApiKey+"/digitalRead?pin="+pin+"&deviceName="+bolt.DeviceId
 	return makeRequest(url)
 }
 
@@ -164,7 +164,7 @@ func (bolt Bolt) Restart() string{
 	return makeRequest(url)
 }
 
-func (bolt Bolt) isAlive() string{
+func (bolt Bolt) IsAlive() string{
 
 	/*
 		Check the device status
@@ -181,7 +181,7 @@ func (bolt Bolt) isAlive() string{
 	return makeRequest(url)
 }
 
-func (bolt Bolt) isOnline() string{
+func (bolt Bolt) IsOnline() string{
 	/*
 		Check the connectivity of the device
 
