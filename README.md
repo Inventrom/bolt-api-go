@@ -191,6 +191,7 @@ func main(){
 	response := bolt.Version()
 	fmt.Println(response)
 }
+```
 
 4. isAlive Command (Deprecated) - Check the connectivity status of your Bolt device
 
