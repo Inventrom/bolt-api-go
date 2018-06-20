@@ -1,0 +1,4 @@
+Follow this particular hardware setup on your bolt device while you are running the unit tests.
+
+1. Connect Rx Pin of your Bolt Module to the Tx Pin of your Bolt Module. (Short Rx and Tx)
+2. Connect Digital Pin 4 of your Bolt Module to the Digital Pin 1 of your Bolt Module. (Short digital pins 1 and 4)
