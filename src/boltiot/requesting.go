@@ -1,8 +1,10 @@
 package boltiot
 
-import ("fmt"
-		"net/http"
-		"io/ioutil")
+import (
+	"fmt"
+	"net/http"
+	"io/ioutil"
+)
 
 func makeRequest(url string) string{
 	resp,err := http.Get(url)
