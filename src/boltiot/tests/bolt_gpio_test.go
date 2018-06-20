@@ -1,4 +1,4 @@
-package boltiot
+package boltiot_test
 
 import (
 	"testing"

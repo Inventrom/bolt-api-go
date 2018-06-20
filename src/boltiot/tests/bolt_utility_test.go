@@ -1,9 +1,8 @@
-package boltiot
+package boltiot_test
 
 import (
 	"testing"
 	"encoding/json"
-	"strconv"
 	"fmt"
 )
 

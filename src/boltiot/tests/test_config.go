@@ -1,3 +1,5 @@
+package boliot_test
+
 var GPIO_CONFIG = map[string]string
 
 GPIO_CONFIG["VALID_PIN"] = "0"
