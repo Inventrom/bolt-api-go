@@ -29,6 +29,14 @@ UART_CONFIG["INVALID_WRITE_VALUE"] = "Lorem ipsum dolor sit amet, consectetur ad
 UART_CONFIG["VALID_DATA_RESPONSE"] = "Serial write Successful"
 UART_CONFIG["INVALID_DATA_RESPONSE"] = "Command timed out"
 
+var UTILITY_CONFIG = map[string]string
+
+UTILITY_CONFIG["SUCCESS_RESPONSE"] = "1"
+UTILITY_CONFIG["FAILED_RESPONSE"] = "0"
+UTILITY_CONFIG["RESTART_RESPONSE"] = "Restarted"
+UTILITY_CONFIG["RESTART_ALTERNATIVE_RESPONSE"] = "Command timed out"
+UTILITY_CONFIG["ONLINE_VALUE"] = "online"
+
 var CREDENTIALS = map[string]string
 
 CREDENTIALS["API_KEY"] = "xxxx"
