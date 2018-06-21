@@ -1,9 +1,19 @@
+// Bolt Cloud API Framework.
+// Author: Vimal Sheoran.
+// Copyright Inventrom Pvt Ltd, 2018.
+// Licensed under MIT License.
+// Check the LICENSE.md file for license information.
+
 package boltiot
 
 import (
   "encoding/json"
 )
 
+// Here is a collection of configurations and important functions.
+// These configurations aid in testing.
+
+// Configurations for testing GPIO functions.
 var GPIO_CONFIG = map[string]string{
   "VALID_PIN": "0",
   "INVALID_PIN": "16",
@@ -18,6 +28,7 @@ var GPIO_CONFIG = map[string]string{
   "INVALID_STATE_RESPONSE": "Invalid state",
 }
 
+// Configurations for testing UART functions.
 var UART_CONFIG = map[string]string{
   "SUCCESS_RESPONSE": "1",
   "FAILED_RESPONSE": "0",
@@ -35,6 +46,7 @@ var UART_CONFIG = map[string]string{
   "INVALID_DATA_RESPONSE": "Command timed out",
 }
 
+// Configurations for testing Utilities.
 var UTILITY_CONFIG = map[string]string{
   "SUCCESS_RESPONSE": "1",
   "FAILED_RESPONSE": "0",
@@ -43,20 +55,25 @@ var UTILITY_CONFIG = map[string]string{
   "ONLINE_VALUE": "online",
 }
 
+// Configuration for user authentication.
 var CREDENTIALS = map[string]string{
   "API_KEY": "xxxx",
   "DEVICE_ID": "xxxx",
 }
 
+// Struct to hold the response from an API request.
+// This struct holds the parsed json obtained after making an API request.
 type ResponseStruct struct{
-  Success string `json:"success"`
-  Value string `json:"value"`
+  Success string `json:"success"` // Holds the JSON "success" field.
+  Value string `json:"value"`     // Holds the JSON "value" field.
 }
-
 var responseStruct ResponseStruct
+
+// Initializing an instance of the Bolt struct.
 var bolt = Bolt{CREDENTIALS["API_KEY"],CREDENTIALS["DEVICE_ID"]}
 
+// This function is responsible for parsing the received JSON data from the API request.
 func parseJson(passedInResponse string){
-	byte_data := []byte(passedInResponse)
-	json.Unmarshal(byte_data, &responseStruct)
+	byte_data := []byte(passedInResponse)     // Convert the response into Bytes
+	json.Unmarshal(byte_data, &responseStruct) // and store it into respective struct fields
 }
