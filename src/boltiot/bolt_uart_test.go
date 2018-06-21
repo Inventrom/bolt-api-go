@@ -1,19 +1,9 @@
-package boltiot_test
+package boltiot
 
 import (
 	"testing"
-	"encoding/json"
-	"strconv"
 	"fmt"
 )
-
-type ResponseStruct struct{
-  Success string `json:"success"`
-  Value string `json:"value"`
-}
-
-var response ResponseStruct
-var bolt = Bolt{CREDENTIALS["API_KEY"],CREDENTIALS["DEVICE_ID"]}
 
 func TestSerialBeginSuccessFull(t *testing.T){
   parseJson(bolt.SerialBegin(UART_CONFIG["VALID_BAUD_RATE"]))
@@ -79,9 +69,4 @@ func TestSerialWriteFailedInvalidData(t *testing.T){
   } else{
     fmt.Println("*****Passed*****")
   }
-}
-
-func parseJson(passedInResponse string){
-	byte_data := []byte(passedInResponse)
-	json.Unmarshal(byte_data, &responseStruct)
 }

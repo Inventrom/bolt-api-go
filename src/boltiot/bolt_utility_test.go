@@ -1,18 +1,9 @@
-package boltiot_test
+package boltiot
 
 import (
 	"testing"
-	"encoding/json"
 	"fmt"
 )
-
-type ResponseStruct struct{
-  Success string `json:"success"`
-  Value string `json:"value"`
-}
-
-var response ResponseStruct
-var bolt = Bolt{CREDENTIALS["API_KEY"],CREDENTIALS["DEVICE_ID"]}
 
 func TestIsOnlineSuccessfull(t *testing.T){
   parseJson(bolt.IsOnline())
@@ -40,14 +31,9 @@ func TestVersionSuccessfull(t *testing.T){
   parseJson(bolt.Version())
   if(responseStruct.Success != UTILITY_CONFIG["SUCCESS_RESPONSE"]){
     t.Error("Failed")
-  } else if(responseStruct.Value == nil){
+  } else if(responseStruct.Value == ""){
     t.Error("Failed")
   } else{
     fmt.Println("*****Passed*****")
   }
-}
-
-func parseJson(passedInResponse string){
-	byte_data := []byte(passedInResponse)
-	json.Unmarshal(byte_data, &responseStruct)
 }

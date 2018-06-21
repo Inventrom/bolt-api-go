@@ -1,19 +1,10 @@
-package boltiot_test
+package boltiot
 
 import (
 	"testing"
-	"encoding/json"
-	"strconv"
 	"fmt"
+	"strconv"
 )
-
-type ResponseStruct struct{
-  Success string `json:"success"`
-  Value string `json:"value"`
-}
-
-var response ResponseStruct
-var bolt = Bolt{CREDENTIALS["API_KEY"],CREDENTIALS["DEVICE_ID"]}
 
 func TestDigitalWriteSuccessfull(t *testing.T){
   parseJson(bolt.DigitalWrite(GPIO_CONFIG["VALID_PIN"],
@@ -68,7 +59,7 @@ func TestAnalogWriteFailedInvalidPin(t *testing.T){
                              GPIO_CONFIG["ANALOG_WRITE_VALUE"]))
   if(responseStruct.Success != GPIO_CONFIG["FAILED_RESPONSE"]){
     t.Error("Failed")
-  } else if(resposneStruct.Value != GPIO_CONFIG["INVALID_PIN_RESPONSE"]){
+  } else if(responseStruct.Value != GPIO_CONFIG["INVALID_PIN_RESPONSE"]){
     t.Error("Failed")
   } else{
     fmt.Println("*****Passed*****")
@@ -99,9 +90,10 @@ func TestDigitalReadFailedInvalidPin(t *testing.T){
 
 func TestAnalogReadSuccessfull(t *testing.T){
 	parseJson(bolt.AnalogRead(GPIO_CONFIG["ANALOG_READ_PIN"]))
+	value, _ := strconv.Atoi(responseStruct.Value)
 	if(responseStruct.Success != GPIO_CONFIG["SUCCESS_RESPONSE"]){
 		t.Error("Failed")
-	} else if(!(int(responseStruct.Value) < 1024 && int(responseStruct.Value) > 0)){
+	} else if(!(value < 1024 && value > 0)){
 		t.Error("Failed")
 	} else{
 		fmt.Println("*****Passed*****")
@@ -117,9 +109,4 @@ func TestAnalogReadFailedInvalidPin(t *testing.T){
 	} else{
 		fmt.Println("*****Passed*****")
 	}
-}
-
-func parseJson(passedInResponse string){
-	byte_data := []byte(passedInResponse)
-	json.Unmarshal(byte_data, &responseStruct)
 }
