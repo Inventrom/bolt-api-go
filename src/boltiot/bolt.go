@@ -31,7 +31,7 @@ func (bolt Bolt) DigitalWrite(pin, state string) string{
 	return makeRequest(url)
 }
 
-func (bolt Bolt) DigitalRead(pin string) string{-
+func (bolt Bolt) DigitalRead(pin string) string{
 
 	/*
 		Reads the value from a specified digital pin.
