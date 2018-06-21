@@ -15,10 +15,10 @@ import (
 
 func TestIsOnlineSuccessfull(t *testing.T){
 	// This function tests for IsOnline function.
-  parseJson(bolt.IsOnline())
-  if(responseStruct.Success != UTILITY_CONFIG["SUCCESS_RESPONSE"]){
+  parseJSON(bolt.IsOnline())
+  if(responseStruct.Success != UtilityConfig["SUCCESS_RESPONSE"]){
     t.Error("Failed")
-  } else if(responseStruct.Value != UTILITY_CONFIG["ONLINE_VALUE"]){
+  } else if(responseStruct.Value != UtilityConfig["ONLINE_VALUE"]){
     t.Error("Failed")
   } else{
     fmt.Println("*****Passed*****")
@@ -27,9 +27,9 @@ func TestIsOnlineSuccessfull(t *testing.T){
 
 func TestRestartSuccessfull(t *testing.T){
 	// This function tests for the Restart function.
-  parseJson(bolt.Restart())
-  if(responseStruct.Value != UTILITY_CONFIG["RESTART_RESPONSE"]){
-    if(responseStruct.Value != UTILITY_CONFIG["RESTART_ALTERNATIVE_RESPONSE"]){
+  parseJSON(bolt.Restart())
+  if(responseStruct.Value != UtilityConfig["RESTART_RESPONSE"]){
+    if(responseStruct.Value != UtilityConfig["RESTART_ALTERNATIVE_RESPONSE"]){
       t.Error("Failed")
     }
   } else{
@@ -39,8 +39,8 @@ func TestRestartSuccessfull(t *testing.T){
 
 func TestVersionSuccessfull(t *testing.T){
 	// This function tests for the Version function.
-  parseJson(bolt.Version())
-  if(responseStruct.Success != UTILITY_CONFIG["SUCCESS_RESPONSE"]){
+  parseJSON(bolt.Version())
+  if(responseStruct.Success != UtilityConfig["SUCCESS_RESPONSE"]){
     t.Error("Failed")
   } else if(responseStruct.Value == ""){
     t.Error("Failed")

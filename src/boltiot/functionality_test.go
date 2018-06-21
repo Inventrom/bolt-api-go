@@ -34,7 +34,7 @@ var boltResponseStruct BoltboltResponseStruct
 
 func TestDigitalWrite(t *testing.T){
 	// Test DigitalWrite.
-	parseJsonResponse(bolt.DigitalWrite("4","HIGH"))
+	parseJSONResponse(bolt.DigitalWrite("4","HIGH"))
 	if(boltResponseStruct.SuccessStatus != "1"){
 		t.Error("Digital Write Failed")
 	} else if(boltResponseStruct.ReturnValue != "1"){
@@ -49,7 +49,7 @@ func TestDigitalRead(t *testing.T){
 	// Test DigitalRead.
 	// The output of this test will depend upon the, response of the DigitalWrite,
 	// function.
-	parseJsonResponse(bolt.DigitalRead("1"))
+	parseJSONResponse(bolt.DigitalRead("1"))
 
 	if (boltResponseStruct.SuccessStatus != "1") {
 		t.Error("Digital Read Failed")
@@ -62,7 +62,7 @@ func TestDigitalRead(t *testing.T){
 
 func TestAnalogWrite(t *testing.T){
 	// Test AnalogWrite.
-	parseJsonResponse(bolt.AnalogWrite("0","100"))
+	parseJSONResponse(bolt.AnalogWrite("0","100"))
 
 	if(boltResponseStruct.SuccessStatus != "1"){
 		t.Error("Analog Write Failed")
@@ -75,7 +75,7 @@ func TestAnalogWrite(t *testing.T){
 
 func TestAnalogRead(t *testing.T){
 	// Test AnalogRead.
-	parseJsonResponse(bolt.AnalogRead("A0"))
+	parseJSONResponse(bolt.AnalogRead("A0"))
 
 	analogValue, _ := strconv.Atoi(boltResponseStruct.ReturnValue)
 	if(boltResponseStruct.SuccessStatus != "1"){
@@ -90,7 +90,7 @@ func TestAnalogRead(t *testing.T){
 
 func TestSerialBegin(t *testing.T){
 	// Test SerialBegin.
-	parseJsonResponse(bolt.SerialBegin("9600"))
+	parseJSONResponse(bolt.SerialBegin("9600"))
 
 	if(boltResponseStruct.ReturnValue == "Success" || boltResponseStruct.ReturnValue == "Command timed out"){
 		fmt.Println("Serial Begin Successful!")
@@ -102,7 +102,7 @@ func TestSerialBegin(t *testing.T){
 
 func TestSerialWrite(t *testing.T){
 	// Test SerialWrite.
-	parseJsonResponse(bolt.SerialWrite("hello"))
+	parseJSONResponse(bolt.SerialWrite("hello"))
 
 	if(boltResponseStruct.SuccessStatus != "1"){
 		t.Error("Serial Write Failed")
@@ -118,7 +118,7 @@ func TestSerialRead(t *testing.T) {
 	// Test SerialRead.
 	// The output of this test will depend upon the output of the SerialWrite
 	// function.
-	parseJsonResponse(bolt.SerialRead("5"))
+	parseJSONResponse(bolt.SerialRead("5"))
 
 	if(boltResponseStruct.SuccessStatus != "1"){
 		t.Error("Serial Read Failed")
@@ -131,7 +131,7 @@ func TestSerialRead(t *testing.T) {
 
 func TestIsAlive(t *testing.T){
 	// Test the IsAlive function.
-	parseJsonResponse(bolt.IsAlive())
+	parseJSONResponse(bolt.IsAlive())
 
 	if(boltResponseStruct.SuccessStatus != "1"){
 		t.Error("Is Alive Failed")
@@ -144,7 +144,7 @@ func TestIsAlive(t *testing.T){
 
 func TestIsOnline(t *testing.T){
 	// Test the IsOnline function.
-	parseJsonResponse(bolt.IsOnline())
+	parseJSONResponse(bolt.IsOnline())
 
 	if (boltResponseStruct.SuccessStatus != "1") {
 		t.Error("Is Online Failed")
@@ -157,7 +157,7 @@ func TestIsOnline(t *testing.T){
 
 func TestRestart(t *testing.T){
 	// Test the Restart function.
-	parseJsonResponse(bolt.Restart())
+	parseJSONResponse(bolt.Restart())
 
 	if (boltResponseStruct.ReturnValue == "Restarted" || boltResponseStruct.ReturnValue == "Command timed out"){
 		fmt.Println("Restart Successful!")
@@ -168,7 +168,7 @@ func TestRestart(t *testing.T){
 }
 
 // Function to help parse the JSON data.
-func parseJsonResponse(passedInResponse string){
-	byte_data := []byte(passedInResponse)
+func parseJSONResponse(passedInResponse string){
+	byteData := []byte(passedInResponse)
 	json.Unmarshal(byte_data, &boltResponseStruct)
 }

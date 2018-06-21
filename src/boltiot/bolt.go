@@ -4,18 +4,18 @@
 // Licensed under MIT License.
 // Check the LICENSE.md file for license information.
 
-// Package declaration
 package boltiot
 
 // Base url for all API endpoints
-var BASE_URL string = "http://cloud.boltiot.com/remote/"
+var BaseURL = "http://cloud.boltiot.com/remote/"
 
-// Struct for handling request authentication
+// Bolt a struct for handling request authentication
 type Bolt struct{
 	APIKey string    // Store the user's API key
-	DeviceId string  // Store the user's Device Id
+	DeviceID string  // Store the user's Device Id
 }
 
+// DigitalWrite method
 func (bolt Bolt) DigitalWrite(pin, state string) string{
 
 	/*
@@ -27,10 +27,11 @@ func (bolt Bolt) DigitalWrite(pin, state string) string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/digitalWrite?pin="+pin+"&state="+state+"&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/digitalWrite?pin="+pin+"&state="+state+"&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// DigitalRead method
 func (bolt Bolt) DigitalRead(pin string) string{
 
 	/*
@@ -41,10 +42,11 @@ func (bolt Bolt) DigitalRead(pin string) string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/digitalRead?pin="+pin+"&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/digitalRead?pin="+pin+"&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// AnalogWrite method
 func (bolt Bolt) AnalogWrite(pin, value string) string{
 
 	/*
@@ -56,10 +58,11 @@ func (bolt Bolt) AnalogWrite(pin, value string) string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/analogWrite?pin="+pin+"&value="+value+"&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/analogWrite?pin="+pin+"&value="+value+"&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// AnalogRead method
 func (bolt Bolt) AnalogRead(pin string) string{
 
 	/*
@@ -70,10 +73,11 @@ func (bolt Bolt) AnalogRead(pin string) string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/analogRead?pin="+pin+"&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/analogRead?pin="+pin+"&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// SerialBegin method
 func (bolt Bolt) SerialBegin(baudRate string) string{
 
 	/*
@@ -83,10 +87,11 @@ func (bolt Bolt) SerialBegin(baudRate string) string{
     :example: {"success": "1", "value": "Success"}\
     :rtype: JSON
 	*/
-	url := BASE_URL+bolt.APIKey+"/serialBegin?baud="+baudRate+"&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/serialBegin?baud="+baudRate+"&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// SerialRead method
 func (bolt Bolt) SerialRead(readTill string) string{
 
 	/*
@@ -97,10 +102,11 @@ func (bolt Bolt) SerialRead(readTill string) string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/serialRead?till="+readTill+"&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/serialRead?till="+readTill+"&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// SerialWrite method
 func (bolt Bolt) SerialWrite(data string) string{
 
 	/*
@@ -111,10 +117,11 @@ func (bolt Bolt) SerialWrite(data string) string{
         :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/serialWrite?data="+data+"&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/serialWrite?data="+data+"&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// Version method
 func (bolt Bolt) Version() string{
 
 	/*
@@ -126,10 +133,11 @@ func (bolt Bolt) Version() string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/version?&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/version?&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// Restart method
 func (bolt Bolt) Restart() string{
 
 	/*
@@ -140,10 +148,11 @@ func (bolt Bolt) Restart() string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/restart?&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/restart?&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// IsAlive method
 func (bolt Bolt) IsAlive() string{
 
 	/*
@@ -154,10 +163,11 @@ func (bolt Bolt) IsAlive() string{
     :rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/isAlive?&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/isAlive?&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }
 
+// IsOnline method
 func (bolt Bolt) IsOnline() string{
 	/*
 		Check the connectivity of the device
@@ -167,6 +177,6 @@ func (bolt Bolt) IsOnline() string{
 		:rtype: JSON
 	*/
 
-	url := BASE_URL+bolt.APIKey+"/isOnline?&deviceName="+bolt.DeviceId
+	url := BaseURL+bolt.APIKey+"/isOnline?&deviceName="+bolt.DeviceID
 	return makeRequest(url)
 }

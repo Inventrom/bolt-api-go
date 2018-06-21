@@ -14,7 +14,7 @@ import (
 // These configurations aid in testing.
 
 // Configurations for testing GPIO functions.
-var GPIO_CONFIG = map[string]string{
+var GPIOConfig = map[string]string{
   "VALID_PIN": "0",
   "INVALID_PIN": "16",
   "VALID_DIGITAL_WRITE_VALUE": "HIGH",
@@ -29,7 +29,7 @@ var GPIO_CONFIG = map[string]string{
 }
 
 // Configurations for testing UART functions.
-var UART_CONFIG = map[string]string{
+var UARTConfig = map[string]string{
   "SUCCESS_RESPONSE": "1",
   "FAILED_RESPONSE": "0",
   "VALID_BAUD_RATE": "9600",
@@ -47,7 +47,7 @@ var UART_CONFIG = map[string]string{
 }
 
 // Configurations for testing Utilities.
-var UTILITY_CONFIG = map[string]string{
+var UtilityConfig = map[string]string{
   "SUCCESS_RESPONSE": "1",
   "FAILED_RESPONSE": "0",
   "RESTART_RESPONSE": "Restarted",
@@ -56,12 +56,12 @@ var UTILITY_CONFIG = map[string]string{
 }
 
 // Configuration for user authentication.
-var CREDENTIALS = map[string]string{
+var Credentials = map[string]string{
   "API_KEY": "xxxx",
   "DEVICE_ID": "xxxx",
 }
 
-// Struct to hold the response from an API request.
+// ResponseStruct a struct to hold the response from an API request.
 // This struct holds the parsed json obtained after making an API request.
 type ResponseStruct struct{
   Success string `json:"success"` // Holds the JSON "success" field.
@@ -70,10 +70,10 @@ type ResponseStruct struct{
 var responseStruct ResponseStruct
 
 // Initializing an instance of the Bolt struct.
-var bolt = Bolt{CREDENTIALS["API_KEY"],CREDENTIALS["DEVICE_ID"]}
+var bolt = Bolt{Credentials["API_KEY"],Credentials["DEVICE_ID"]}
 
 // This function is responsible for parsing the received JSON data from the API request.
-func parseJson(passedInResponse string){
-	byte_data := []byte(passedInResponse)     // Convert the response into Bytes
-	json.Unmarshal(byte_data, &responseStruct) // and store it into respective struct fields
+func parseJSON(passedInResponse string){
+	byteData := []byte(passedInResponse)     // Convert the response into Bytes
+	json.Unmarshal(byteData, &responseStruct) // and store it into respective struct fields
 }
