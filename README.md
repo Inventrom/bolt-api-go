@@ -19,7 +19,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.DigitalWrite("2","HIGH")
@@ -33,7 +33,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.DigitalRead("2")
@@ -48,7 +48,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.AnalogWrite("0","100")
@@ -63,7 +63,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.AnalogRead("A0")
@@ -80,7 +80,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.SerialBegin("9600")
@@ -96,7 +96,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.SerialWrite("hello")
@@ -112,7 +112,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.SerialRead("5")
@@ -130,7 +130,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.IsOnline()
@@ -145,7 +145,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.Restart()
@@ -159,7 +159,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.Version()
@@ -175,7 +175,7 @@ package main
 import "fmt"
 import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
-var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
+var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
 	response := bolt.IsAlive()
