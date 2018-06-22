@@ -4,15 +4,9 @@ This library provides easy to use interface of the Bolt Cloud APIs. The function
 
 # Installation
 
-Follow these instructions to install the Bolt API library directly to your GOPATH.
+The library can be easily installed using `go get`. Paste the following command into your terminal to install the library.
 
-1. Clone or Download the repository from Github
-
-2. Navigate to the **/src** folder and copy the **/boltiot** folder from the **/src** folder and paste it into your **GOPATH**
-
-3. Open up the terminal in the following location **<YOUR GOPATH>/boltiot** and run the following command `go install`
-
-4. Now you are all setup to start working with the APIs
+`go get -v github.com/Inventrom/bolt-api-go/boltiot`
 
 # Usage Guide
 
@@ -22,10 +16,8 @@ Follow these instructions to install the Bolt API library directly to your GOPAT
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -38,10 +30,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -55,10 +45,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -72,10 +60,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -91,10 +77,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -109,10 +93,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -127,10 +109,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -147,10 +127,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -164,10 +142,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -180,10 +156,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -198,10 +172,8 @@ func main(){
 ```go
 package main
 
-import (
-	"fmt"
-	"boltiot"
-	)
+import "fmt"
+import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 
 var bolt = boltiot.Bolt("YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE")
 
@@ -217,24 +189,26 @@ You can find the Bolt API documentation here http://cloud.boltiot.com/api_creden
 
 # Testing
 
-To perform a unit test follow these instructions.
+To perform a unit test and functionality test follow these instructions.
 
-1. Setup your Bolt according to the instructions provided in the **test_configurations.txt** file provided under the **/src** directory.
+1. Navigate to **YOUR_GO_PATH/src/github.com/Inventrom/bolt-api-go/**
 
-2. Make sure that your Bolt device is connected to the Bolt Cloud.
+2. Now setup your hardware according to the instructions provided in the **hardware_config.txt**
 
-3. Navigate to your package folder, **<YOUR-GOPATH>/boltiot**, there is a test file in there named **bolt_test.go**
+3. Make sure that your Bolt device is connected to the Bolt Cloud.
+
+3. Navigate inside the **boltiot/** folder.
 
 4. Open up your terminal in this location and run the following command `go test`
 
 # Contributing
 
-Your contributions are always welcome! Please refer to the contribution guidelines. 
+Your contributions are always welcome! Please refer to the contribution guidelines.
 
 ## Guidelines
 * Fork the repository on GitHub.
 * First checkout to dev branch.
-* Create a feature branch only when you are working on a new feature. 
+* Create a feature branch only when you are working on a new feature.
 * Write a test which shows that the bug was fixed or that the feature works as expected.
 * Never work on master branch
 * Send a pull request and wait until it gets merged and published. :)
