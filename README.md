@@ -1,3 +1,5 @@
+# Bolt API Framework (BETA VERSION)
+
 # Introduction
 
 This library provides easy to use interface of the Bolt Cloud APIs. The functions are similar in syntax to standard Arduino or Rasberry Pi functions.
