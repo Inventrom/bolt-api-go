@@ -24,8 +24,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.DigitalWrite("2","HIGH")
-	fmt.Println(response)
+  response := bolt.DigitalWrite("2","HIGH")
+  fmt.Println(response)
 }
 ```
 2. digitalRead Command
@@ -38,8 +38,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.DigitalRead("2")
-	fmt.Println(response)
+  response := bolt.DigitalRead("2")
+  fmt.Println(response)
 }
 ```
 
@@ -53,8 +53,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.AnalogWrite("0","100")
-	fmt.Println(response)
+  response := bolt.AnalogWrite("0","100")
+  fmt.Println(response)
 }
 ```
 
@@ -68,8 +68,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.AnalogRead("A0")
-	fmt.Println(response)
+  response := bolt.AnalogRead("A0")
+  fmt.Println(response)
 }
 ```
 
@@ -85,8 +85,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.SerialBegin("9600")
-	fmt.Println(response)
+  response := bolt.SerialBegin("9600")
+  fmt.Println(response)
 }
 ```
 
@@ -101,8 +101,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.SerialWrite("hello")
-	fmt.Println(response)
+  response := bolt.SerialWrite("hello")
+  fmt.Println(response)
 }
 ```
 
@@ -117,8 +117,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.SerialRead("5")
-	fmt.Println(response)
+  response := bolt.SerialRead("5")
+  fmt.Println(response)
 }
 ```
 
@@ -135,8 +135,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.IsOnline()
-	fmt.Println(response)
+  response := bolt.IsOnline()
+  fmt.Println(response)
 }
 ```
 
@@ -150,8 +150,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.Restart()
-	fmt.Println(response)
+  response := bolt.Restart()
+  fmt.Println(response)
 }
 ```
 3. version Command - Check the device version
@@ -164,8 +164,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.Version()
-	fmt.Println(response)
+  response := bolt.Version()
+  fmt.Println(response)
 }
 ```
 
@@ -180,8 +180,8 @@ import boltiot "github.com/Inventrom/bolt-api-go/boltiot"
 var bolt = boltiot.Bolt{"YOUR-API_KEY-GOES-HERE","YOUR-DEVICE_ID-GOES-HERE"}
 
 func main(){
-	response := bolt.IsAlive()
-	fmt.Println(response)
+  response := bolt.IsAlive()
+  fmt.Println(response)
 }
 ```
 

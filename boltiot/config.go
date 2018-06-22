@@ -74,6 +74,6 @@ var bolt = Bolt{Credentials["API_KEY"],Credentials["DEVICE_ID"]}
 
 // This function is responsible for parsing the received JSON data from the API request.
 func parseJSON(passedInResponse string){
-	byteData := []byte(passedInResponse)     // Convert the response into Bytes
-	json.Unmarshal(byteData, &responseStruct) // and store it into respective struct fields
+  byteData := []byte(passedInResponse)     // Convert the response into Bytes
+  json.Unmarshal(byteData, &responseStruct) // and store it into respective struct fields
 }

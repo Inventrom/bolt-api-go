@@ -7,15 +7,15 @@
 package boltiot
 
 import (
-	"fmt"
-	"testing"
-	"time"
+  "fmt"
+  "testing"
+  "time"
 )
 
 // Test functions for Utility functions.
 
 func TestIsOnlineSuccessfull(t *testing.T){
-	// This function tests for IsOnline function.
+  // This function tests for IsOnline function.
   parseJSON(bolt.IsOnline())
   if(responseStruct.Success != UtilityConfig["SUCCESS_RESPONSE"]){
     t.Error("Failed")
@@ -24,11 +24,11 @@ func TestIsOnlineSuccessfull(t *testing.T){
   } else{
     fmt.Println("*****Passed*****")
   }
-	time.Sleep(3*time.Second)
+  time.Sleep(3*time.Second)
 }
 
 func TestRestartSuccessfull(t *testing.T){
-	// This function tests for the Restart function.
+  // This function tests for the Restart function.
   parseJSON(bolt.Restart())
   if(responseStruct.Value != UtilityConfig["RESTART_RESPONSE"]){
     if(responseStruct.Value != UtilityConfig["RESTART_ALTERNATIVE_RESPONSE"]){
@@ -37,12 +37,12 @@ func TestRestartSuccessfull(t *testing.T){
   } else{
     fmt.Println("*****Passed*****")
   }
-	time.Sleep(15*time.Second)
+  time.Sleep(15*time.Second)
 }
 
 func TestVersionSuccessfull(t *testing.T){
-	// This function tests for the Version function.
-	t.Skip("Skipped. Will be implemented after the API patches.")
+  // This function tests for the Version function.
+  t.Skip("Skipped. Will be implemented after the API patches.")
   parseJSON(bolt.Version())
   if(responseStruct.Success != UtilityConfig["SUCCESS_RESPONSE"]){
     t.Error("Failed")
@@ -51,5 +51,5 @@ func TestVersionSuccessfull(t *testing.T){
   } else{
     fmt.Println("*****Passed*****")
   }
-	time.Sleep(3*time.Second)
+  time.Sleep(3*time.Second)
 }
