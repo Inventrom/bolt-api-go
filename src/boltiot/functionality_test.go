@@ -15,10 +15,11 @@
 package boltiot
 
 import (
-	"testing"
 	"encoding/json"
-	"strconv"
 	"fmt"
+	"strconv"
+	"testing"
+	"time"
 )
 
 // Declaring a struct to hold the parsed JSON from the response
@@ -42,6 +43,7 @@ func TestDigitalWrite(t *testing.T){
 	} else{
 		fmt.Println("Digital Write Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 
@@ -58,6 +60,7 @@ func TestDigitalRead(t *testing.T){
 	} else{
 		fmt.Println("Digital Read Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 func TestAnalogWrite(t *testing.T){
@@ -71,6 +74,7 @@ func TestAnalogWrite(t *testing.T){
 	} else{
 		fmt.Println("Analog Write Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 func TestAnalogRead(t *testing.T){
@@ -85,6 +89,7 @@ func TestAnalogRead(t *testing.T){
 	} else{
 		fmt.Println("Analog Read Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 
@@ -97,7 +102,7 @@ func TestSerialBegin(t *testing.T){
 	} else{
 		t.Error("Serial Begin Failed")
 	}
-
+	time.Sleep(3*time.Second)
 }
 
 func TestSerialWrite(t *testing.T){
@@ -111,6 +116,7 @@ func TestSerialWrite(t *testing.T){
 	} else{
 		fmt.Println("Serial Write Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 
@@ -119,7 +125,6 @@ func TestSerialRead(t *testing.T) {
 	// The output of this test will depend upon the output of the SerialWrite
 	// function.
 	parseJSONResponse(bolt.SerialRead("5"))
-
 	if(boltResponseStruct.SuccessStatus != "1"){
 		t.Error("Serial Read Failed")
 	} else if(boltResponseStruct.ReturnValue != "hello"){
@@ -127,6 +132,7 @@ func TestSerialRead(t *testing.T) {
 	} else{
 		fmt.Println("Serial Read Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 func TestIsAlive(t *testing.T){
@@ -140,6 +146,7 @@ func TestIsAlive(t *testing.T){
 	} else{
 		fmt.Println("Is Alive Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 func TestIsOnline(t *testing.T){
@@ -153,6 +160,7 @@ func TestIsOnline(t *testing.T){
 	} else{
 		fmt.Println("Is Online Successful!")
 	}
+	time.Sleep(3*time.Second)
 }
 
 func TestRestart(t *testing.T){
@@ -165,10 +173,11 @@ func TestRestart(t *testing.T){
 	} else{
 		t.Error("Restart Failed")
 	}
+	time.Sleep(3*time.Second)
 }
 
 // Function to help parse the JSON data.
 func parseJSONResponse(passedInResponse string){
 	byteData := []byte(passedInResponse)
-	json.Unmarshal(byte_data, &boltResponseStruct)
+	json.Unmarshal(byteData, &boltResponseStruct)
 }

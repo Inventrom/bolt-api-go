@@ -15,7 +15,7 @@ import (
 
 // Configurations for testing GPIO functions.
 var GPIOConfig = map[string]string{
-  "VALID_PIN": "0",
+  "VALID_PIN": "2",
   "INVALID_PIN": "16",
   "VALID_DIGITAL_WRITE_VALUE": "HIGH",
   "INVALID_DIGITAL_WRITE_VALUE": "MEDIUM",
@@ -57,8 +57,8 @@ var UtilityConfig = map[string]string{
 
 // Configuration for user authentication.
 var Credentials = map[string]string{
-  "API_KEY": "xxxx",
-  "DEVICE_ID": "xxxx",
+  "API_KEY": "7bc48b25-f5c8-4ef3-9477-c599835583da",
+  "DEVICE_ID": "BOLT3729610",
 }
 
 // ResponseStruct a struct to hold the response from an API request.

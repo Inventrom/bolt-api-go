@@ -7,8 +7,9 @@
 package boltiot
 
 import (
-	"testing"
 	"fmt"
+	"testing"
+	"time"
 )
 
 // Test functions for Utility functions.
@@ -23,6 +24,7 @@ func TestIsOnlineSuccessfull(t *testing.T){
   } else{
     fmt.Println("*****Passed*****")
   }
+	time.Sleep(3*time.Second)
 }
 
 func TestRestartSuccessfull(t *testing.T){
@@ -35,10 +37,12 @@ func TestRestartSuccessfull(t *testing.T){
   } else{
     fmt.Println("*****Passed*****")
   }
+	time.Sleep(15*time.Second)
 }
 
 func TestVersionSuccessfull(t *testing.T){
 	// This function tests for the Version function.
+	t.Skip("Skipped. Will be implemented after the API patches.")
   parseJSON(bolt.Version())
   if(responseStruct.Success != UtilityConfig["SUCCESS_RESPONSE"]){
     t.Error("Failed")
@@ -47,4 +51,5 @@ func TestVersionSuccessfull(t *testing.T){
   } else{
     fmt.Println("*****Passed*****")
   }
+	time.Sleep(3*time.Second)
 }
