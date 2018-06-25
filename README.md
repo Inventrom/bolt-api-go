@@ -2,7 +2,7 @@
 
 # Introduction
 
-This library provides easy to use interface of the Bolt Cloud APIs. The functions are similar in syntax to standard Arduino or Rasberry Pi functions.
+This library provides easy to use interface of the Bolt Cloud APIs. The functions are similar in syntax to standard Arduino or Raspberry Pi functions.
 
 # Installation
 
@@ -187,7 +187,7 @@ func main(){
 
 ## Bolt API documenation
 
-You can find the Bolt API documentation here http://cloud.boltiot.com/api_credentials.
+You can find the Bolt API documentation here http://cloud.boltiot.com/docs.
 
 # Testing
 
